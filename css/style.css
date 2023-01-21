@@ -17,18 +17,18 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: rgba(223, 242, 247, .5);
+	background-color: #a1c5e7;
+	/*background-color: rgba(223, 242, 247, .5);*/
 	/*height: 100%;*/
 	/*margin: 0;*/
 }
 
 span {
-	padding-right: 15px;
-	padding-left: 15px;
+	padding: 0 1.5rem;
 }
 
 img {
-	width: 100%;
+	max-width: 100%;
 }
 
 .container {
@@ -51,6 +51,7 @@ img {
 	align-items: center;
 	width: 100%;
 	height: 100%;
+	gap: 4rem;
 }
 
 .chat {
@@ -83,9 +84,10 @@ input {
 	height: 100%;
 	width: 100%;
 	background-color: white;
-	padding: 15px;
-	margin: 15px;
-	border-radius: 10px;
+	padding: 3rem;
+	margin: 1.5rem;
+	border-radius: 1rem;
+	gap: 1.5rem;
 }
 
 #bot {
@@ -98,13 +100,15 @@ input {
 }
 
 .avatar {
-	height: 25px;
+	/**/
+	/*height: 25px;*/
+	height: 4rem;
 }
 
 .response {
 	display: flex;
 	align-items: center;
-	margin: 1%;
+	/*margin: 1%;*/
 }
 
 .bot-img {
