@@ -23,10 +23,6 @@ body {
 	/*margin: 0;*/
 }
 
-span {
-	padding: 0 1.5rem;
-}
-
 img {
 	max-width: 100%;
 }
@@ -56,7 +52,7 @@ img {
 
 .chat {
 	display: flex;
-	height: 75rem;
+	height: 70rem;
 	width: 100%;
 	flex-direction: column;
 	justify-content: center;
@@ -80,7 +76,7 @@ input {
 .messages {
 	display: flex;
 	flex-direction: column;
-	overflow: scroll;
+	overflow-y: auto;
 	height: 100%;
 	width: 100%;
 	background-color: white;
@@ -90,13 +86,48 @@ input {
 	gap: 1.5rem;
 }
 
+
+.bot-img {
+	width: 40rem;
+}
+
+/* Estilos de Scroll para motores Webkit y blink (Chrome, Safari, Opera... ) */
+
+.messages::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.messages::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.messages::-webkit-scrollbar-button:increment,.contenedor::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.messages::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #797979;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.messages::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+/*_________________________________*/
+
+
 #bot {
 	margin-left: auto;
 }
 
 .bot {
-	font-family: Consolas, 'Courier New', Menlo, source-code-pro, Monaco,
-		monospace;
+	font-family: Consolas, 'Courier New', Menlo, source-code-pro, Monaco, monospace;
 }
 
 .avatar {
@@ -108,15 +139,58 @@ input {
 .response {
 	display: flex;
 	align-items: center;
+	gap: 1rem;
 	/*margin: 1%;*/
 }
 
-.bot-img {
-	width: 40rem;
+.response span {
+	padding: 1.5rem;
+	border-radius: 2rem;
+}
+
+.user span {
+	background-color: #59f56e;
+}
+
+.bot span {
+	background-color: #eeaaff;
+}
+
+.footer {
+    color: #464646;
+    font-weight: bold;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.rojo {
+	color: rgb(252, 0, 0);
 }
 
 /* Mobile */
 
+@media (max-width: 768px) {
+	.header {
+		padding: 2rem 0 0 0;
+	}
+
+	.chat-container {
+		flex-direction: column-reverse;
+		gap: 0.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.bot-img {
+		width: 15rem;
+		margin-bottom: 2rem;
+	}
+}
+
+	/*
 @media only screen and (max-width: 980px) {
 	.container {
 		flex-direction: column;
@@ -128,3 +202,4 @@ input {
 		margin: 10vw;
 	}
 }
+	*/
