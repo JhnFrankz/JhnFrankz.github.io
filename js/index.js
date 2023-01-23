@@ -19,18 +19,26 @@ function output(input) {
 
   let text = input.toLowerCase().replace(/[^\w\s]/gi, "").replace(/[\d]/gi, "").trim();
   text = text
-    .replace(/ a /g, " ")   // 'tell me a story' -> 'tell me story'
+    //.replace(/ a /g, " ")   // 'tell me a story' -> 'tell me story'
     .replace(/i feel /g, "")
     .replace(/whats/g, "what is")
     .replace(/please /g, "")
     .replace(/ please/g, "")
-    .replace(/r u/g, "are you");
+    //.replace(/r u/g, "are you");
 
   if (compare(prompts, replies, text)) { 
     // Search for exact match in `prompts`
     product = compare(prompts, replies, text);
-  } else if (text.match(/thank/gi)) {
-    product = "You're welcome!"
+  } else if (text.match(/gracias/gi)) {
+    product = "De nada...!"
+
+  } else if (text.match(/dolor/gi)) {
+    product = "visite pronto un centro de salud;si no escriba 'necesito una consulta!"
+  } else if (text.match(/mal/gi)) {
+    product = "Si se encuentra delicado de salud visite urgentemente un centro medico!si no escriba 'necesito una consulta"
+  } else if (text.match(/ayuda/gi)) {
+    product = "Si necesita ayuda urgente visite un centro medico; si no escriba 'necesito una consulta'"
+  
   } else if (text.match(/(corona|covid|virus)/gi)) {
     // If no match, check if message contains `coronavirus`
     product = coronavirus[Math.floor(Math.random() * coronavirus.length)];
